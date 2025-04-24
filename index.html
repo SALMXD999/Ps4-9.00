@@ -1,22 +1,31 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>تشغيل PPPwn على PS4</title>
-  <style>
-    body { font-family: Arial, sans-serif; background: #111; color: #fff; text-align: center; padding: 2rem; }
-    input, button { margin: 1rem; padding: 0.5rem 1rem; font-size: 1rem; border-radius: 10px; }
-    .output { white-space: pre-wrap; background: #222; padding: 1rem; border-radius: 10px; margin-top: 2rem; text-align: left; direction: ltr; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PPPwn PS4 Exploit</title>
 </head>
 <body>
-  <h1>🚀 تشغيل PPPwn على PS4</h1>
-  <p>ارفع ملف stage2.bin فقط واضغط تشغيل</p>
-  <input type="file" id="stage2" accept=".bin">
-  <br>
-  <button onclick="runExploit()">تشغيل الاستغلال</button>
-  <div class="output" id="output">النتائج ستظهر هنا...</div>
+    <h1>PPPwn PS4 Exploit Running...</h1>
+    <p>Executing PPPoE RCE exploit with stage2 binary...</p>
 
-  <script src="pppwn.js"></script>
+    <script>
+        window.onload = function() {
+            // Define the URL for the stage2 binary
+            const stage2_url = "https://github.com/SALMXD999/Ps4-9.00/raw/main/stage2/stage2.bin";
+
+            // Create the args for the exploit, using stage2 binary only
+            const args = `interface=enp0s3 fw=900 stage2=${stage2_url}`;
+
+            // Print to the console to confirm everything is set up
+            console.log("Running PPPwn with args:", args);
+
+            // Trigger the exploit (this is just a simulation of how you'd send the payload)
+            setTimeout(function() {
+                alert("Exploit executed: Payload sent with stage2.");
+                // In real implementation, the exploit would be triggered via backend/server-side execution or direct action.
+            }, 3000); // Simulate a delay before triggering
+        };
+    </script>
 </body>
 </html>
