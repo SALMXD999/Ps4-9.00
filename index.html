@@ -1,141 +1,45 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>PPPwn PS4 Exploit</title>
+  <title>PPPwn Exploit</title>
   <style>
     body {
-      background-color: #000;
-      color: #fff;
-      font-family: monospace;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      padding: 20px;
-    }
-
-    #runBtn {
-      font-size: 48px;
-      padding: 20px 60px;
-      background-color: #d50000;
-      border: none;
-      border-radius: 12px;
-      color: white;
-      cursor: pointer;
-      margin-bottom: 30px;
-    }
-
-    #console {
-      white-space: pre-wrap;
       background-color: #111;
-      border: 1px solid #444;
+      color: #fff;
+      text-align: center;
+      font-family: Arial, sans-serif;
+      margin-top: 100px;
+    }
+    #runButton {
+      padding: 30px 60px;
+      font-size: 40px;
+      background-color: red;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+    #log {
+      margin-top: 40px;
+      text-align: left;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+      font-size: 16px;
+      background: #222;
       padding: 20px;
-      width: 90%;
-      max-width: 900px;
-      height: 400px;
-      overflow-y: auto;
-      display: none;
+      border-radius: 10px;
+      white-space: pre-wrap;
     }
   </style>
 </head>
 <body>
+  <h1>PPPwn PS4 Exploit</h1>
+  <button id="runButton">RUN</button>
 
-  <button id="runBtn">RUN</button>
-  <div id="console"></div>
+  <div id="log"></div>
 
-  <script>
-    const consoleOutput = `
-[+] PPPwn - PlayStation 4 PPPoE RCE by theflow
-[+] args: interface=enp0s3 fw=900 stage1=stage1/stage1.bin stage2=stage2/stage2.bin
-
-[+] STAGE 0: Initialization
-[*] Waiting for PADI...
-[+] pppoe_softc: 0xffffabd634beba00
-[+] Target MAC: xx:xx:xx:xx:xx:xx
-[+] Source MAC: 07:ba:be:34:d6:ab
-[+] AC cookie length: 0x4e0
-[*] Sending PADO...
-[*] Waiting for PADR...
-[*] Sending PADS...
-[*] Waiting for LCP configure request...
-[*] Sending LCP configure ACK...
-[*] Sending LCP configure request...
-[*] Waiting for LCP configure ACK...
-[*] Waiting for IPCP configure request...
-[*] Sending IPCP configure NAK...
-[*] Waiting for IPCP configure request...
-[*] Sending IPCP configure ACK...
-[*] Sending IPCP configure request...
-[*] Waiting for IPCP configure ACK...
-[*] Waiting for interface to be ready...
-[+] Target IPv6: fe80::2d9:d1ff:febc:83e4
-[+] Heap grooming...done
-
-[+] STAGE 1: Memory corruption
-[+] Pinning to CPU 0...done
-[*] Sending malicious LCP configure request...
-[*] Waiting for LCP configure request...
-[*] Sending LCP configure ACK...
-[*] Sending LCP configure request...
-[*] Waiting for LCP configure ACK...
-[*] Waiting for IPCP configure request...
-[*] Sending IPCP configure NAK...
-[*] Waiting for IPCP configure request...
-[*] Sending IPCP configure ACK...
-[*] Sending IPCP configure request...
-[*] Waiting for IPCP configure ACK...
-[+] Scanning for corrupted object...found fe80::0fdf:4141:4141:4141
-
-[+] STAGE 2: KASLR defeat
-[*] Defeating KASLR...
-[+] pppoe_softc_list: 0xffffffff884de578
-[+] kaslr_offset: 0x3ffc000
-
-[+] STAGE 3: Remote code execution
-[*] Sending LCP terminate request...
-[*] Waiting for PADI...
-[+] pppoe_softc: 0xffffabd634beba00
-[+] Target MAC: xx:xx:xx:xx:xx:xx
-[+] Source MAC: 97:df:ea:86:ff:ff
-[+] AC cookie length: 0x511
-[*] Sending PADO...
-[*] Waiting for PADR...
-[*] Sending PADS...
-[*] Triggering code execution...
-[*] Waiting for stage1 to resume...
-[*] Sending PADT...
-[*] Waiting for PADI...
-[+] pppoe_softc: 0xffffabd634be9200
-[+] Target MAC: xx:xx:xx:xx:xx:xx
-[+] AC cookie length: 0x0
-[*] Sending PADO...
-[*] Waiting for PADR...
-[*] Sending PADS...
-[*] Waiting for LCP configure request...
-[*] Sending LCP configure ACK...
-[*] Sending LCP configure request...
-[*] Waiting for LCP configure ACK...
-[*] Waiting for IPCP configure request...
-[*] Sending IPCP configure NAK...
-[*] Waiting for IPCP configure request...
-[*] Sending IPCP configure ACK...
-[*] Sending IPCP configure request...
-[*] Waiting for IPCP configure ACK...
-
-[+] STAGE 4: Arbitrary payload execution
-[*] Sending stage2 payload...
-[+] Done!
-`;
-
-    document.getElementById("runBtn").addEventListener("click", () => {
-      document.getElementById("runBtn").style.display = "none";
-      const consoleDiv = document.getElementById("console");
-      consoleDiv.style.display = "block";
-      consoleDiv.textContent = consoleOutput;
-      // تقدر هنا تضيف call حقيقي لتشغيل ppwn.js أو استدعاء exploit حقيقي
-    });
-  </script>
+  <script src="pppwn.js"></script>
 </body>
 </html>
