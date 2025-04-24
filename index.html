@@ -1,31 +1,44 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PPPwn PS4 Exploit</title>
+  <meta charset="UTF-8">
+  <title>PPPwn PS4 Exploit</title>
+  <style>
+    body {
+      background-color: #111;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-family: Arial, sans-serif;
+      flex-direction: column;
+    }
+    #runBtn {
+      font-size: 40px;
+      padding: 20px 60px;
+      background-color: #00c853;
+      border: none;
+      border-radius: 10px;
+      color: white;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    #runBtn:hover {
+      background-color: #00e676;
+    }
+  </style>
 </head>
 <body>
-    <h1>PPPwn PS4 Exploit Running...</h1>
-    <p>Executing PPPoE RCE exploit with stage2 binary...</p>
 
-    <script>
-        window.onload = function() {
-            // Define the URL for the stage2 binary
-            const stage2_url = "https://github.com/SALMXD999/Ps4-9.00/raw/main/stage2/stage2.bin";
+  <h1>PPPwn PS4 - Exploit 9.00</h1>
+  <button id="runBtn">RUN</button>
 
-            // Create the args for the exploit, using stage2 binary only
-            const args = `interface=enp0s3 fw=900 stage2=${stage2_url}`;
-
-            // Print to the console to confirm everything is set up
-            console.log("Running PPPwn with args:", args);
-
-            // Trigger the exploit (this is just a simulation of how you'd send the payload)
-            setTimeout(function() {
-                alert("Exploit executed: Payload sent with stage2.");
-                // In real implementation, the exploit would be triggered via backend/server-side execution or direct action.
-            }, 3000); // Simulate a delay before triggering
-        };
-    </script>
+  <script src="ppwn.js"></script>
+  <script>
+    document.getElementById("runBtn").addEventListener("click", () => {
+      executeExploit();
+    });
+  </script>
 </body>
 </html>
