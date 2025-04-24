@@ -1,14 +1,18 @@
-function runExploit() {
-  const output = document.getElementById("output");
-  output.textContent = "[+] بدء تنفيذ PPPwn...\n";
+const stage2_url = "https://github.com/SALMXD999/Ps4-9.00/raw/main/stage2/stage2.bin";
 
-  const stage2 = document.getElementById("stage2").files[0];
-
-  if (!stage2) {
-    output.textContent += "[!] يرجى رفع stage2.bin\n";
-    return;
-  }
-
-  output.textContent += "[+] تم رفع stage2: " + stage2.name + "\n";
-  output.textContent += "[✓] تم التجهيز - بإمكانك الآن دمج السكربت مع backend لتشغيل PPPwn فعليًا\n";
+// تعديل أو إرسال الاستغلال باستخدام stage2 فقط
+function executeExploit() {
+    console.log("Executing PPPwn with stage2 binary...");
+    fetch(stage2_url)
+        .then(response => response.blob())
+        .then(blob => {
+            console.log("Stage2 payload loaded successfully.");
+            // هنا تضع الكود الذي يرسل أو ينفذ الاستغلال باستخدام الـ stage2 payload
+        })
+        .catch(error => {
+            console.error("Error loading stage2:", error);
+        });
 }
+
+// تنفيذ الاستغلال عند تحميل الصفحة
+window.onload = executeExploit;
