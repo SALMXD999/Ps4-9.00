@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Caching Files...</title>
+  <script>
+    async function cacheFiles() {
+      const files = [
+        'exfathax.img',
+        'goldheh_v2.4b18.3.bin',
+        'exploit.js',
+        'index.html'
+      ];
+
+      for (const file of files) {
+        try {
+          await fetch(file, { cache: 'reload' });
+          console.log('Cached:', file);
+        } catch (e) {
+          console.error('Failed caching:', file, e);
+        }
+      }
+
+      document.body.innerHTML = '<h1>Files Cached! You can go back now.</h1>';
+    }
+
+    window.onload = cacheFiles;
+  </script>
+</head>
+<body>
+  <h1>Caching Files...</h1>
+</body>
+</html>
