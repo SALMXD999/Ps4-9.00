@@ -1,0 +1,13 @@
+CACHE MANIFEST
+# Version 1.0
+
+CACHE:
+index.html
+exploit.js
+kexploit.js
+rop.js
+int64.js
+cache.js
+
+NETWORK:
+*
