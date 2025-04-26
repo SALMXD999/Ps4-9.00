@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="ar" manifest="cache.manifest">
 <head>
   <meta charset="UTF-8">
   <title>PPPwn - تعديل PS4 عبر USB</title>
@@ -41,9 +41,13 @@
   <button onclick="startExploit()">OK</button>
 </div>
 
+<!-- روابط الملفات -->
+<script src="cache.js"></script>
 <script src="kexploit.js"></script>
 <script src="exploit.js"></script>
+
 <script>
+// زر OK يبدأ الاستغلال
 function startExploit() {
   document.getElementById('usbModal').style.display = 'none';
   run_hax();
