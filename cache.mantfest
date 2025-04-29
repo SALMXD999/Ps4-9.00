@@ -2,15 +2,26 @@ CACHE MANIFEST
 
 CACHE: 
 cache.html
-Cache.manifest
-exploit.js
-goldhen_v2.4b17.3.bin
+config.js
+frontend.js
+goldhen.bin
+img.jpg
 index.html
 int64.js
+jbc_loader.js
 kexploit.js
+malloc.js
+netcat.js
+offset.js
+payload.js
+psfreec.js
+relocator.js
 rop.js
+rop2.js
+style.css
+syscalls.js
+syscalls2.js
+utils.js
 
 NETWORK: 
 * 
-
-# 2024-06-16 14:22:30
