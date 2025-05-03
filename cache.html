@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html manifest="Cache.manifest" lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<title>مرحباً بك في تهكير من زعيمنا سالم الحارثي - المضيف سالم الحارثي - PSFREE الأسرع Exfat USB - تثبيت التخزين المؤقت</title>
+<style>
+    html, body {
+        margin: auto;
+        font-family: sans-serif;
+        font-size: 20px;
+        font-weight: lighter;
+        text-align: center;
+        color: #FFFFFF;
+        background-color: #1A1920;
+        background-size: cover;
+        overflow: hidden;
+    }
+    h1 {
+        text-shadow: 0.1em 0.1em 0.2em black;
+        font-size: 30px;
+        text-align: center;
+        color: white;
+    }
+    #msgs {
+        font-size: 30px;
+        margin-top: 77px;
+        margin-bottom: 455px;
+    }
+    hr {
+        padding: 0;
+        margin: 0;
+        opacity: 0.7;
+    }
+</style>
+</head>
+<body>
+<script>
+history.replaceState(null,null,'index.html');
+var histlength=history.length;
+history.go(-histlength);
+
+function DLProgress(e) {
+    Percent = (Math.round(e.loaded / e.total * 100));
+    setTimeout(function(){
+        window.msgs.innerHTML = "جاري التهكير يا زعيمنا سالم " + Percent + "%";
+    }, 500);
+}
+
+function DisplayCacheProgress() {
+    setTimeout(function(){
+        window.msgs.innerHTML = "تم التهكير بنجاح ✔";
+    }, 1500);
+    setTimeout(function(){
+        window.msgs.innerHTML = "الآن أغلق المتصفح وافتحه مرة أخرى";
+    }, 3500);
+}
+
+window.applicationCache.addEventListener("progress", DLProgress, false);
+window.applicationCache.oncached = function(e) { DisplayCacheProgress(); };
+window.applicationCache.onupdateready = function(e) { DisplayCacheProgress(); };
+</script>
+
+<h1>مرحباً بك في تهكير من زعيمنا سالم الحارثي - المضيف سالم الحارثي - PSFREE - بدء التهكير</h1>
+<hr>
+<br>
+<h1 id="msgs">جاري التهكير يا زعيمنا سالم...</h1>
+
+</body>
+</html>
