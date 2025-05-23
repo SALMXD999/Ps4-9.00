@@ -58,7 +58,7 @@ const [is_ps4, version] = (() => {
     const version = value & 0xffff;
     const [lower, upper] = (() => {
         if (is_ps4) {
-            return [0x600, 0x1000];
+            return [0x600, 0x1101];
         } else {
             return [0x100, 0x600];
         }
