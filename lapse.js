@@ -49,7 +49,7 @@ const [is_ps4, version] = (() => {
     const version = value & 0xffff;
     const [lower, upper] = (() => {
         if (is_ps4) {
-            return [0x100, 0x1250];
+            return [0x100, 0x1101];
         } else {
             return [0x100, 0x1020];
         }
@@ -1660,7 +1660,7 @@ async function patch_kernel(kbase, kmem, p_ucred, restore_info) {
     if (!is_ps4) {
         throw RangeError('PS5 kernel patching unsupported');
     }
-    if (!(0x800 <= version < 0x900)) {
+    if (!(0x800 <= version < 0x1100)) {
         throw RangeError('kernel patching unsupported');
     }
 
@@ -1682,7 +1682,7 @@ async function patch_kernel(kbase, kmem, p_ucred, restore_info) {
     // cr_sceCaps[1]
     kmem.write64(p_ucred.add(0x68), -1);
 
-    const buf = await get_patches('./kpatch/900.elf');
+    const buf = await get_patches('./kpatch/1100.elf');
     // FIXME handle .bss segment properly
     // assume start of loadable segments is at offset 0x1000
     const patches = new View1(await buf, 0x1000);
