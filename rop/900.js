@@ -357,7 +357,7 @@ export class Chain900 extends Chain900Base {
         this.webcore_ta.write64(0, this.old_vtable_p);
     }
 }
-export const Chain = Chain900;
+export const Chain = Chain1100;
 
 export function init(Chain) {
     [libwebkit_base, libkernel_base, libc_base] = get_bases();
@@ -371,4 +371,4 @@ export function init(Chain) {
     Chain.init_class(gadgets, syscall_array);
 }
 
-log('Chain900');
+log('Chain1100');
