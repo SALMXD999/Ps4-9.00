@@ -1,0 +1,144 @@
+<!-- Copyright (C) 2023-2025 anonymous
+
+This file is part of PSFree.
+
+PSFree is free software: you can redistribute it and/or modify
+it under the terms of the GNU Affero General Public License as
+published by the Free Software Foundation, either version 3 of the
+License, or (at your option) any later version.
+
+PSFree is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU Affero General Public License for more details.
+
+You should have received a copy of the GNU Affero General Public License
+along with this program.  If not, see <https://www.gnu.org/licenses/>.
+-->
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <title>4GAMER المضيف الجديد PSFREE بدون فلاش 9.00</title>
+        <style>
+            @font-face {
+                font-family: 'logging';
+                src: url('fonts/LiberationMono-Regular.ttf');
+            }
+            @font-face {
+                font-family: 'Arabic';
+                src: url('fonts/Tajawal-Regular.ttf');
+                font-weight: normal;
+                font-style: normal;
+            }
+            body {
+                background-color: #050810;
+                color: white;
+                font-family: 'Arabic', Arial, sans-serif;
+                direction: rtl;
+                text-align: center;
+                margin: 0;
+                padding: 0;
+            }
+            #console {
+                font-family: 'logging';
+                background-color: rgba(0, 0, 0, 0.7);
+                border-radius: 5px;
+                padding: 10px;
+                margin: 20px auto;
+                max-width: 90%;
+                text-align: left;
+                direction: ltr;
+            }
+            .animated-bg {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                z-index: -2;
+                background-color: #050810;
+                overflow: hidden;
+            }
+            .shape {
+                position: absolute;
+                background-color: #00aaff;
+                opacity: 0.6;
+                z-index: 0;
+                will-change: transform, opacity;
+            }
+            .shape1 { top: 15%; left: 10%; width: 30px; height: 30px; clip-path: polygon(50% 0%, 0% 100%, 100% 100%); animation: floatShape1 22s ease-in-out infinite alternate; }
+            .shape2 { top: 30%; left: 80%; width: 40px; height: 40px; clip-path: polygon(50% 0%, 0% 100%, 100% 100%); animation: floatShape2 28s ease-in-out infinite alternate-reverse; transform: rotate(45deg); }
+            .shape3 { top: 70%; left: 25%; width: 25px; height: 25px; clip-path: polygon(50% 0%, 0% 100%, 100% 100%); animation: floatShape3 25s ease-in-out infinite alternate; transform: rotate(-30deg); }
+            .shape4 { top: 80%; left: 65%; width: 35px; height: 35px; clip-path: polygon(50% 0%, 0% 100%, 100% 100%); animation: floatShape4 30s ease-in-out infinite alternate-reverse; transform: rotate(120deg); }
+            .shape5 { top: 50%; left: 50%; width: 20px; height: 20px; clip-path: polygon(50% 0%, 0% 100%, 100% 100%); animation: floatShape5 20s ease-in-out infinite alternate; transform: rotate(-90deg); }
+            .glow-layer {
+                position: absolute;
+                top: -50%;
+                left: -50%;
+                width: 200%;
+                height: 200%;
+                background: radial-gradient(ellipse at center, rgba(0, 50, 100, 0.3) 0%, transparent 60%);
+                animation: subtleGlow 15s ease-in-out infinite alternate;
+                will-change: opacity, transform;
+                z-index: -1;
+            }
+            @keyframes floatShape1 { 0% { transform: translate(0, 0) rotate(0deg); opacity: 0.6; } 50% { transform: translate(30px, -20px) rotate(45deg); opacity: 0.8; } 100% { transform: translate(0, 0) rotate(0deg); opacity: 0.6; } }
+            @keyframes floatShape2 { 0% { transform: translate(0, 0) rotate(0deg); opacity: 0.5; } 50% { transform: translate(-25px, 40px) rotate(-30deg); opacity: 0.7; } 100% { transform: translate(0, 0) rotate(0deg); opacity: 0.5; } }
+            @keyframes floatShape3 { 0% { transform: translate(0, 0) rotate(0deg); opacity: 0.7; } 50% { transform: translate(10px, 30px) rotate(60deg); opacity: 0.9; } 100% { transform: translate(0, 0) rotate(0deg); opacity: 0.7; } }
+            @keyframes floatShape4 { 0% { transform: translate(0, 0) rotate(0deg); opacity: 0.4; } 50% { transform: translate(-40px, -10px) rotate(-75deg); opacity: 0.6; } 100% { transform: translate(0, 0) rotate(0deg); opacity: 0.4; } }
+            @keyframes floatShape5 { 0% { transform: translate(0, 0) rotate(0deg); opacity: 0.6; } 50% { transform: translate(20px, 15px) rotate(20deg); opacity: 0.8; } 100% { transform: translate(0, 0) rotate(0deg); opacity: 0.6; } }
+            @keyframes subtleGlow {
+                0% { opacity: 0.2; transform: scale(1); }
+                50% { opacity: 0.4; transform: scale(1.05); }
+                100% { opacity: 0.2; transform: scale(1); }
+            }
+            .brand-number {
+                color: #ff5722;
+                font-size: 1.5em;
+                font-weight: bold;
+            }
+            .brand-text {
+                color: #4CAF50;
+                font-weight: bold;
+            }
+            h1 {
+                margin-top: 20px;
+                font-size: 28px;
+            }
+            .container {
+                max-width: 900px;
+                margin: 0 auto;
+                padding: 20px;
+                position: relative;
+                z-index: 1;
+            }
+        </style>
+        <script>
+        if (window.applicationCache.status=='0')
+        {
+          window.location.replace("cache.html");
+        }
+        </script>
+    </head>
+    <body>
+        <div class="animated-bg">
+            <div class="shape shape1"></div>
+            <div class="shape shape2"></div>
+            <div class="shape shape3"></div>
+            <div class="shape shape4"></div>
+            <div class="shape shape5"></div>
+            <div class="glow-layer"></div>
+        </div>
+        <div class="container">
+            <h1><span class="brand-number">4</span><span class="brand-text">GAMER</span> المضيف الجديد PSFREE بدون فلاش 9.00</h1>
+            <div style="text-align: center; margin: 20px 0;">
+                التبرعات (Monero/XMR):<br>
+                86Fk3X9AE94EGKidzRbvyiVgGNYD3qZnuKNq1ZbsomFWXHYm6TtAgz9GNGitPWadkS3Wr9uXoT29U1SfdMtJ7QNKQpW1CVS<br>
+                <a href='./about.html' data-jslicense='1' style="color: #4CAF50;">معلومات ترخيص جافاسكريبت</a> للكود المصدري والترخيص.<br>
+            </div>
+            <pre id='console'></pre>
+        </div>
+    </body>
+    <script src="./payload.js"></script>
+    <script type='module' src='./alert.mjs'></script>
+</html>

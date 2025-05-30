@@ -1,0 +1,32 @@
+CACHE MANIFEST 
+# 4GAMER PSFree-Lapse
+
+about.html
+alert.mjs
+cache.html
+config.mjs
+index.html
+lapse.mjs
+payload.bin
+payload.js
+psfree.mjs
+fonts/LiberationMono-Regular.ttf
+fonts/Tajawal-Regular.ttf
+kpatch/900.elf
+module/chain.mjs
+module/constants.mjs
+module/int64.mjs
+module/mem.mjs
+module/memtools.mjs
+module/offset.mjs
+module/rw.mjs
+module/utils.mjs
+module/view.mjs
+rop/900.mjs
+style.css
+
+NETWORK:
+*
+
+SETTINGS:
+prefer-online:
